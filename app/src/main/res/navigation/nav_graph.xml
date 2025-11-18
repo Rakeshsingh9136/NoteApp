@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/Auth"
+    >
+    <fragment android:id="@+id/Auth"
+        android:label="Auth"
+        tools:layout="@layout/fragment_auth"
+        android:name="com.knowledge.newapp.ui.framgment.Auth">
+        <action android:id="@+id/Auth_to_Main"
+            app:destination="@+id/mainMenu"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainMenu"
+        android:name="com.knowledge.newapp.ui.framgment.MainMenu"
+        android:label="fragment_main_menu"
+        tools:layout="@layout/fragment_main_menu" >
+        <action android:id="@+id/main_to_Note"
+            app:destination="@+id/AddNote"/>
+        <action android:id="@+id/main_to_taskManager"
+            app:destination="@+id/TaskManager"/>
+        <action android:id="@+id/main_to_reminder"
+            app:destination="@+id/Reminder"/>
+        <action android:id="@+id/main_to_insight"
+            app:destination="@+id/Insights"/>
+    </fragment>
+    <fragment android:id="@+id/AddNote"
+        android:name="com.knowledge.newapp.ui.framgment.Note"
+        android:label="Add_Notes"
+        tools:layout="@layout/fragment_note">
+        <action android:id="@+id/Note_to_main"
+            app:destination="@+id/mainMenu"/>
+        <action android:id="@+id/Note_to_TaskManger"
+            app:destination="@+id/TaskManager"/>
+        <action android:id="@+id/Note_to_reminder"
+            app:destination="@+id/Reminder"/>
+        <action android:id="@+id/Note_to_Insights"
+            app:destination="@+id/Insights"/>
+    </fragment>
+    <fragment android:id="@+id/TaskManager"
+        android:name="com.knowledge.newapp.ui.framgment.TaskManager"
+        android:label="Task Manager"
+        tools:layout="@layout/fragment_task_manager">
+        <action android:id="@+id/taskmanager_to_main"
+            app:destination="@+id/mainMenu"/>
+        <action android:id="@+id/taskmanager_to_note"
+            app:destination="@+id/AddNote"/>
+        <action android:id="@+id/taskmanager_to_Reminder"
+            app:destination="@+id/Reminder"/>
+        <action android:id="@+id/taskmanager_to_insights"
+            app:destination="@+id/Insights"/>
+    </fragment>
+    <fragment android:id="@+id/Reminder"
+        android:name="com.knowledge.newapp.ui.framgment.Reminder"
+        android:label="Reminder"
+        tools:layout="@layout/fragment_reminder"
+        >
+        <action android:id="@+id/remainder_to_main"
+            app:destination="@+id/mainMenu"/>
+        <action android:id="@+id/reminder_to_Note"
+            app:destination="@+id/AddNote"/>
+        <action android:id="@+id/reminder_to_taskmanager"
+            app:destination="@+id/TaskManager"/>
+        <action android:id="@+id/reminder_to_insights"
+            app:destination="@+id/Insights"/>
+    </fragment>
+    <fragment android:id="@+id/Insights"
+        android:name="com.knowledge.newapp.ui.framgment.Insights"
+        tools:layout="@layout/fragment_insights"
+        android:label="Insights">
+        <action android:id="@+id/insights_to_main"
+            app:destination="@+id/mainMenu"/>
+        <action android:id="@+id/insights_to_Note"
+            app:destination="@+id/AddNote"/>
+        <action android:id="@+id/insights_to_taskManager"
+            app:destination="@+id/TaskManager"/>
+        <action android:id="@+id/insights_to_reminder"
+            app:destination="@+id/Reminder"/>
+    </fragment>
+
+</navigation>
