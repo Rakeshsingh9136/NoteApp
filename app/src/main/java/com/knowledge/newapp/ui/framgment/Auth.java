@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.knowledge.newapp.R;
+import com.knowledge.newapp.databinding.FragmentAuthBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +17,7 @@ import com.knowledge.newapp.R;
  * create an instance of this fragment.
  */
 public class Auth extends Fragment {
+    private FragmentAuthBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +63,28 @@ public class Auth extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_auth, container, false);
+//        return inflater.inflate(R.layout.fragment_auth, container, false);
+        binding=FragmentAuthBinding.inflate(inflater,container,false);
+        binding.logintoregister.setOnClickListener(v->{
+            binding.RegisterView.setVisibility(View.VISIBLE);
+            binding.LoginView.setVisibility(View.GONE);
+            binding.ForgotView.setVisibility(View.GONE);
+        });
+        binding.regitertologin.setOnClickListener(v->{
+            binding.RegisterView.setVisibility(View.GONE);
+            binding.LoginView.setVisibility(View.VISIBLE);
+            binding.ForgotView.setVisibility(View.GONE);
+        });
+        binding.forgottologin.setOnClickListener(v->{
+            binding.RegisterView.setVisibility(View.GONE);
+            binding.LoginView.setVisibility(View.VISIBLE);
+            binding.ForgotView.setVisibility(View.GONE);
+        });
+        binding.forgotPassView.setOnClickListener(v->{
+            binding.RegisterView.setVisibility(View.GONE);
+            binding.LoginView.setVisibility(View.GONE);
+            binding.ForgotView.setVisibility(View.VISIBLE);
+        });
+        return binding.getRoot();
     }
 }
