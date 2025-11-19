@@ -3,12 +3,15 @@ package com.knowledge.newapp.ui.framgment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.knowledge.newapp.R;
+import com.knowledge.newapp.databinding.FragmentMainMenuBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +19,7 @@ import com.knowledge.newapp.R;
  * create an instance of this fragment.
  */
 public class MainMenu extends Fragment {
+    private FragmentMainMenuBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +65,14 @@ public class MainMenu extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_menu, container, false);
+//        return inflater.inflate(R.layout.fragment_main_menu, container, false);
+        binding=FragmentMainMenuBinding.inflate(inflater,container,false);
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+
+        binding.NoteId.setOnClickListener(v -> navController.navigate(R.id.main_to_Note));
+        binding.TaskId.setOnClickListener(v -> navController.navigate(R.id.main_to_taskManager));
+        binding.ReminderID.setOnClickListener(v -> navController.navigate(R.id.main_to_reminder));
+        binding.InsightsId.setOnClickListener(v -> navController.navigate(R.id.main_to_insight));
+        return binding.getRoot();
     }
 }
