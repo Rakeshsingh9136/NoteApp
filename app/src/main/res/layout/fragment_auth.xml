@@ -22,8 +22,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
+            android:layout_margin="20dp"
+            android:padding="10dp"
             android:visibility="visible"
             android:id="@+id/LoginView"
+            android:background="@drawable/background_icon"
             android:orientation="vertical">
             <TextView
                 android:layout_width="match_parent"
@@ -59,10 +62,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:textColor="#18ffff"
+                android:textColor="#1565C0"
                 android:id="@+id/forgotPassView"
                 android:layout_marginTop="20dp"
-                android:text="forgot password"/>
+                android:text="Forgot password"/>
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
@@ -85,7 +88,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textColor="#18ffff"
+                    android:textColor="#1565C0"
                     android:layout_marginRight="10dp"
                     android:text="Don't have an account please"/>
                 <TextView
@@ -104,6 +107,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:visibility="gone"
+            android:background="@drawable/background_icon"
+            android:padding="10dp"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:id="@+id/RegisterView"
             android:orientation="vertical">
@@ -193,7 +199,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:textColor="#18ffff"
+                    android:textColor="#1565C0"
                     android:layout_marginRight="10dp"
                     android:text="Already have an account ?"/>
                 <TextView
@@ -214,6 +220,9 @@
                 android:gravity="center"
                 android:id="@+id/ForgotView"
                 android:visibility="gone"
+                android:padding="10dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/background_icon"
                 android:orientation="vertical">
                 <TextView
                     android:layout_width="match_parent"
@@ -280,7 +289,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:textColor="#18ffff"
+                        android:textColor="#1565C0"
                         android:layout_marginRight="10dp"
                         android:text="Already know your password"/>
                     <TextView

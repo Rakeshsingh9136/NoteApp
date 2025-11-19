@@ -4,10 +4,13 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
+    android:id="@+id/TaskMangerUiID"
     tools:context=".ui.framgment.TaskManager">
-
-    <include layout="@layout/bottom_menu"
-        android:visibility="gone"
-        android:id="@+id/bottomMenu"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Hello Tasks"
+        />
 
 </LinearLayout>
