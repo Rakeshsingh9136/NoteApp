@@ -67,8 +67,19 @@ public class MainMenu extends Fragment {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_main_menu, container, false);
         binding=FragmentMainMenuBinding.inflate(inflater,container,false);
+        boolean isLoggedIn=requireActivity().getSharedPreferences("MyPrefs",getContext().MODE_PRIVATE).getBoolean("isLoggedIn",false);
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
-
+        if(!isLoggedIn){
+            navController.navigate(R.id.Auth);
+            return binding.getRoot();
+        }
+        binding.logoutId.setOnClickListener(v->{
+            requireActivity().getSharedPreferences("MyPrefs", getContext().MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isLoggedIn", false)
+                    .apply();
+            navController.navigate(R.id.Auth);
+        });
         binding.NoteId.setOnClickListener(v -> navController.navigate(R.id.main_to_Note));
         binding.TaskId.setOnClickListener(v -> navController.navigate(R.id.main_to_taskManager));
         binding.ReminderID.setOnClickListener(v -> navController.navigate(R.id.main_to_reminder));
