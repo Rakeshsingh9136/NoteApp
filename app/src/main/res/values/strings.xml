@@ -4,6 +4,10 @@
     <string name="task">Task Manager</string>
     <string name="reminders">Reminders</string>
     <string name="insights">Insights</string>
+    <string name="type">Type... </string>
+    <string name="save">Save</string>
+    <string name="microphone">Microphone</string>
+    <string name="upload_image">Upload Image</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

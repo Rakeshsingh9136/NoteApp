@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e6e6"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Save Button -->
+    <ImageButton
+        android:id="@+id/btnSaveId"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="end"
+        android:padding="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/check_icon"
+        android:contentDescription="@string/save" />
+
+    <!-- Title Input -->
+    <EditText
+        android:id="@+id/titleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/type"
+        android:background="@android:drawable/edit_text"
+        android:padding="12dp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Description Input -->
+    <EditText
+        android:id="@+id/descriptionId"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="description"
+        android:gravity="top"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginTop="12dp"
+        android:maxLines="10"
+        android:scrollbars="vertical" />
+
+    <!-- Bottom Actions Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="12dp">
+
+        <ImageButton
+            android:id="@+id/idMicId"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/mic_icon"
+            android:contentDescription="@string/microphone" />
+
+        <ImageButton
+            android:id="@+id/UploadImageId"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/upload_image"
+            android:contentDescription="@string/upload_image" />
+    </LinearLayout>
+
+</LinearLayout>

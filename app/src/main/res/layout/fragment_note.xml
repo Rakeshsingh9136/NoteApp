@@ -6,12 +6,14 @@
     android:id="@+id/NoteUiID"
     android:orientation="vertical"
     tools:context=".ui.framgment.Note">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:text="Hello Notes"
-    />
 
+    <include layout="@layout/addtext_layout"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/noteRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
 
 </LinearLayout>
