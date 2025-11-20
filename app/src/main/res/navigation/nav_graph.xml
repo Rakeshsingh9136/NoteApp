@@ -39,6 +39,8 @@
             app:destination="@+id/Reminder"/>
         <action android:id="@+id/Note_to_Insights"
             app:destination="@+id/Insights"/>
+        <action android:id="@+id/Notes_to_AddNote"
+            app:destination="@+id/addNote"/>
     </fragment>
     <fragment android:id="@+id/TaskManager"
         android:name="com.knowledge.newapp.ui.framgment.TaskManager"
@@ -79,6 +81,14 @@
             app:destination="@+id/TaskManager"/>
         <action android:id="@+id/insights_to_reminder"
             app:destination="@+id/Reminder"/>
+    </fragment>
+    <fragment android:id="@+id/addNote"
+        android:name="com.knowledge.newapp.ui.framgment.AddNoteFragment"
+        tools:layout="@layout/addtext_layout"
+        android:label="Add_text">
+        <action android:id="@+id/addNote_to_Notes"
+            app:destination="@+id/AddNote"/>
+
     </fragment>
 
 </navigation>

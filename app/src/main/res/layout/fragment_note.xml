@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/NoteUiID"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".ui.framgment.Note">
 
-    <include layout="@layout/addtext_layout"/>
+    <TextView
+        android:id="@+id/titleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Notes"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        android:layout_margin="16dp"
+        android:textColor="#222" />
+
+    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/noteRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="8dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/titleHeader"
+        android:padding="12dp"
         android:clipToPadding="false" />
 
-</LinearLayout>
+    <!-- Floating Add Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNoteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_icon"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#4CAF50"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+       android:layout_marginRight="20dp"
+        android:layout_marginBottom="80dp"/>
+
+</RelativeLayout>

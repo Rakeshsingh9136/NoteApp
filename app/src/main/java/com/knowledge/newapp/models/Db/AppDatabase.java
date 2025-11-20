@@ -6,15 +6,18 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.knowledge.newapp.models.Dao.NoteDao;
 import com.knowledge.newapp.models.Dao.UserDao;
+import com.knowledge.newapp.models.Entities.NoteEntity;
 import com.knowledge.newapp.models.Entities.User;
 
-@Database(entities = {User.class}, version = 1)
+@Database(entities = {User.class, NoteEntity.class}, version = 1,exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
 
     public abstract UserDao userDao();
+    public abstract NoteDao noteDao();
 
     public static synchronized AppDatabase getInstance(Context context) {
         if (instance == null) {
