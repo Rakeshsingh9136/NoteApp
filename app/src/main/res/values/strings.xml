@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">newapp</string>
+    <string name="app_name">Smart Note</string>
     <string name="note">Smart Notes</string>
     <string name="task">Task Manager</string>
     <string name="reminders">Reminders</string>
