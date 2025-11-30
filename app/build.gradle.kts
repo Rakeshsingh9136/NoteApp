@@ -68,4 +68,7 @@ dependencies {
     // ML Kit (Java-compatible)
     implementation("com.google.mlkit:text-recognition:16.0.0")
     implementation("com.google.mlkit:entity-extraction:16.0.0-beta6")
+    implementation ("com.google.mlkit:text-recognition:16.0.0")
+
+
 }
