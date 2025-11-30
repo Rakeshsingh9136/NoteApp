@@ -90,17 +90,21 @@ public class TaskManager extends Fragment {
         }).attachToRecyclerView(binding.taskRecycler);
     }
 
+    /** Add a task with NLP parsing + schedule 5-min reminder */
     private void addTask() {
         String input = binding.inputTask.getText().toString().trim();
         if (input.isEmpty()) return;
 
-        // NLP Parsing with 5-min reminder
         NLPParser.ParsedResult parsed = NLPParser.parse(input);
 
         Task task = new Task();
         task.setTitle(parsed.title);
         task.setCategory(parsed.category);
-        task.setDateTime(parsed.dateTimeMillis); // 5-min reminder
+
+        // Set reminder 5 minutes from now
+        long reminderTime = System.currentTimeMillis() + 5 * 60 * 1000;
+        task.setDateTime(reminderTime);
+
         task.setRawInput(parsed.raw);
 
         viewModel.addTask(task);
@@ -109,6 +113,7 @@ public class TaskManager extends Fragment {
         scheduleReminder(task); // schedule notification
     }
 
+    /** Show edit dialog and reschedule reminder */
     private void showEditDialog(Task task) {
         EditText edit = new EditText(getContext());
         edit.setText(task.getRawInput());
@@ -121,7 +126,11 @@ public class TaskManager extends Fragment {
 
                     task.setTitle(parsed.title);
                     task.setCategory(parsed.category);
-                    task.setDateTime(parsed.dateTimeMillis); // update 5-min reminder
+
+                    // Update reminder 5 min from now
+                    long reminderTime = System.currentTimeMillis() + 5 * 60 * 1000;
+                    task.setDateTime(reminderTime);
+
                     task.setRawInput(parsed.raw);
 
                     viewModel.updateTask(task);
